@@ -12,23 +12,69 @@
     </nav>
     <main>
         <h2>Vacation Contest Sign-Up Form</h2>
-        <form> <!-- TODO: Set Action and Method Properties -->
+        <form method="GET" action="./results.html">
             <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
-                <!-- TODO: Create a "lastname" input with type "text" -->
+                <label for="firstname">Your First Name</label><span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" required minlength="2" maxlength="35">
+                <label for="lastname">Your Last Name</label><span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" required minlength="2" maxlength="35"/>
+                <label for="age">Your Age</label>
+                <input type="number" id="age" name="age" required min="21" max="100"/>
+                <h5>You must be 21 or older to enter contest.</h5>
             </div>
-            <!-- TODO: Make fieldset and legend -->
-            <!-- Todo: Email Input -->
-            <!-- Todo: Street Address Input -->
-            <!-- Todo: City, State, and Zip Inputs -->
-
-            <!-- TODO: Second fieldset -->
-            <!-- TODO: Radio buttons for selecting preferred destination -->
-            <!-- TODO: Color input for selecting favorite color -->
-            <!-- TODO: Checkboxes for selecting extra add-ons -->
-            
-            <!-- TODO: Submit Button -->
+            <fieldset>
+                <legend>Your Contact Info</legend>
+            <div>
+                <label for="email">Email</label><span class="required-field">*</span>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="streetaddress">Street Address</label><span class="required-field">*</span>
+                <input type="text" id="streetaddress" name="address" required/>
+            </div>
+            <div>
+                <label for="City">City</label><span class="required-field">*</span>
+                <input type="text" id="City" name="City" required/>
+            </div>
+            <div>
+                <label for="State">State</label><span class="required-field">*</span>
+                <input type="text" id="State" name="State" list="state-list" required/>
+                <datalist id="state-list">
+                    <option value="AK">Alaska</option>
+                    <option value="PA">Philly</option>
+                    <option value="LA">Los Angeles</option>
+                </datalist>
+            </div>
+            <div>
+                <label for="zipcode">Zip Code</label><span class="required-field">*</span>
+                <input type="number" id="ZipCode" name="Zip" required/>
+            </div>
+        </fieldset>
+            <fieldset>
+                <legend>Your Preferences</legend>
+                <h3>Choose Your Location</h3>
+            <div>
+                <input type="radio" id="Aruba"  name="Location" value="Aruba"/>
+                <label for="Aruba">Aruba</label>
+            </div>
+            <div>
+                <input type="radio" name="Location" id="Japan" value="Japan"/>
+                <label for="Japan">Japan</label>
+            </div>
+            <div>
+                <input type="radio" name="Location" id="Reykjavik" value="Reykjavik"/>
+                <label for="Reykjavik">Reykjavik</label>
+            </div>
+                <input type="radio" id="New Zealand" name="Location" value="New Zealand"/>
+                <label for="New Zealand">New Zealand</label>
+                <div>
+                    <label for="color">color</label>
+                    <input type="color" name="color"/>
+                </div>
+            </fieldset>
+            <div>
+                <input type="submit" id="submit" value="Enter the contest"/>
+            </div>
         </form>
     </main>
     <footer>
